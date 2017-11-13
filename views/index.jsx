@@ -1,6 +1,7 @@
 // This code uses the optional React.js JSX syntax to create our views, which we
 // shall use throughout the rest of this workshop.
 import React from 'react';
+import PropTypes from 'prop-types';
 
     export default class TodoBox extends React.Component{
       render() {
@@ -20,7 +21,7 @@ import React from 'react';
               <tbody>
                 <Todo title="Shopping">Milk</Todo>
                 <Todo title="Hair cut">13:00</Todo>
-
+                <Todo title="Learn React">15:00</Todo>
               </tbody>
             </table>
           </div>
@@ -42,10 +43,13 @@ import React from 'react';
         );
       }
     }
+    Todo.propTypes = {
+      title: React.PropTypes.string.isRequired
+    };
     class TodoForm extends React.Component {
       // Escreva o código aqui
       render(){
-        return (<div class="todoForm">
+        return (<div className="todoForm">
           I am a TodoForm.
         </div>
       );
