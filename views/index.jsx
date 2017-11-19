@@ -17,7 +17,7 @@ import PropTypes from 'prop-types';
       // Escreva o código aqui
       render(){
         return (<div className="todoList">
-            <table style={{border: "2px solid black;"}}>
+            <table style={{border: "2px solid black"}}>
               <tbody>
                 <Todo title="Shopping">Milk</Todo>
                 <Todo title="Hair cut">13:00</Todo>
@@ -33,18 +33,22 @@ import PropTypes from 'prop-types';
       render(){
         return(
           <tr>
-            <td style={{border: "1px solid black;"}}>
+            <td>
+              <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>
+            </td>
+            <td style={{border: "1px solid black"}}>
               {this.props.title}
             </td>
-            <td style={{border: "1px solid black;"}}>
+            <td style={{border: "1px solid black"}}>
               {this.props.children}
             </td>
           </tr>
         );
       }
     }
+
     Todo.propTypes = {
-      title: React.PropTypes.string.isRequired
+        title: PropTypes.string.isRequired
     };
     class TodoForm extends React.Component {
       // Escreva o código aqui
