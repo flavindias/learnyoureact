@@ -16,8 +16,9 @@ import PropTypes from 'prop-types';
     class TodoList extends React.Component{
       // Escreva o código aqui
       render(){
-        return (<div className="todoList">
-            <table style={{border: "2px solid black"}}>
+        return (
+          <div className="todoList">
+            <table style={{border: "2px solid black;"}}>
               <tbody>
                 <Todo title="Shopping">Milk</Todo>
                 <Todo title="Hair cut">13:00</Todo>
@@ -26,20 +27,16 @@ import PropTypes from 'prop-types';
             </table>
           </div>
         );
-
       }
     }
     class Todo extends React.Component{
       render(){
         return(
           <tr>
-            <td>
-              <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>
-            </td>
-            <td style={{border: "1px solid black"}}>
+            <td style={{border: "1px solid black;"}}>
               {this.props.title}
             </td>
-            <td style={{border: "1px solid black"}}>
+            <td style={{border: "1px solid black;"}}>
               {this.props.children}
             </td>
           </tr>
